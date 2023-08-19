@@ -1,0 +1,61 @@
+version: '3.9'
+services:
+  postgres_account:
+    container_name: postgres_account
+    image: postgres:14.2
+    volumes:
+      - './data/db:/var/lib/postgresql_account/data'
+    environment:
+      - POSTGRES_NAME=account
+      - POSTGRES_USER=account
+      - POSTGRES_PASSWORD=account
+  
+    ports:
+      - '5432:5432'
+      
+  postgres_marina:
+    container_name: postgres_marina
+    image: postgres:14.2
+    volumes:
+      - './data/db:/var/lib/postgresql_marina/data'
+    environment:
+      - POSTGRES_NAME=marina
+      - POSTGRES_USER=marina
+      - POSTGRES_PASSWORD=Pa55w0rd
+  
+    ports:
+      - '5433:5432'
+      
+  keycloack_navegapp:
+    container_name: keycloack_navegapp
+    image: jboss/keycloak:10.0.0
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: Pa55w0rd
+    ports:
+      - "8180:8080"
+  jaeger_navegapp:
+    image: jaegertracing/all-in-one:1.17
+    container_name: jaeger_navegapp
+    restart: on-failure
+    ports:
+      - 5775:5775/udp
+      - 6831:6831/udp
+      - 6832:6832/udp
+      - 5778:5778
+      - 16686:16686
+      - 14268:14268
+      - 9411:9411
+  prometheus_navegapp:
+    container_name: prometheus_navegapp
+    image: prometheus_navegapp
+    ports:
+      - 9090:9090
+
+  grafana_navegapp:
+    container_name: grafana_navegapp
+    image: grafana/grafana:8.2.6
+    ports:
+      - 3000:3000
+    
+    

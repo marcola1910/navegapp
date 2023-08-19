@@ -1,0 +1,35 @@
+{
+  "iss": "http://localhost:8180/auth/realms/navegapp",
+  "jti": "a-123",
+  "aud": "account",
+  "sub": "20d5dc28-20e7-44ff-a4c8-8ed6aff344fc",
+  "allowed-origins": [
+    "*",
+    "http://localhost/*"
+  ],
+  "realm_access": {
+    "roles": [
+      "sailor",
+      "offline_access",
+      "uma_authorization"
+    ]
+  },
+  "resource_access": {
+    "account": {
+      "roles": [
+        "manage-account",
+        "manage-account-links",
+        "view-profile"
+      ]
+    }
+  },
+  "scope": "profile email",
+  "email_verified": true,
+  "groups": [
+    "sailor",
+    "offline_access",
+    "uma_authorization"
+  ],
+  "preferred_username": "sailor",
+  "email": "marc.particular@gmail.com"
+}

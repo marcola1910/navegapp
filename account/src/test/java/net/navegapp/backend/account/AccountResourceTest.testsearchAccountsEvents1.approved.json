@@ -1,0 +1,14 @@
+[
+  {
+    "description": "account creation",
+    "id": 1,
+    "name": "crd",
+    "note": "day when name1 created the account because he wants sailing in diferent marines"
+  },
+  {
+    "description": "first sailing",
+    "id": 2,
+    "name": "fs",
+    "note": "first sailing in guarapiranga using Pera marine as base."
+  }
+]
